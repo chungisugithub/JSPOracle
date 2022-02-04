@@ -1,16 +1,18 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ page import="java.sql.*"%>
+<%@ include file="dbConnection.jsp" %>
+
 <%! String custNo= "noNo"; %>
 <%
 	request.setCharacterEncoding("UTF-8");
 	custNo = request.getParameter("custno");
 
-	String url = "jdbc:oracle:thin:@localhost:1521:xe";
+/* 	String url = "jdbc:oracle:thin:@localhost:1521:xe";
 	Class.forName("oracle.jdbc.driver.OracleDriver");
 	Connection conn = 
 		DriverManager.getConnection(url, "shop", "1234");
-	
+ */	
 	String sql = "update member_tbl_02 "+
 	" set custname = ?, phone= ?, address = ?, joindate = to_date(?,'YYYY-MM-DD'), grade = ?, city = ? where custno = " + custNo;
 

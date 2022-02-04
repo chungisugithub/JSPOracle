@@ -1,6 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ page import="java.sql.*"%>
+<%@ include file="dbConnection.jsp" %>
+
 <html>
 <body>
 <h2>고객정보수정</h2>
@@ -11,10 +13,10 @@
 			return;
 		}
 		
-		String url = "jdbc:oracle:thin:@localhost:1521:xe";
+/* 		String url = "jdbc:oracle:thin:@localhost:1521:xe";
 		Class.forName("oracle.jdbc.driver.OracleDriver");
 		Connection conn = DriverManager
-				.getConnection(url, "shop", "1234");
+				.getConnection(url, "shop", "1234"); */
 
 		String sql = "select * from member_tbl_02 where custno = " + custno;
 		ResultSet rs = conn.prepareStatement(sql).executeQuery();

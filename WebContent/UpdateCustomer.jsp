@@ -8,11 +8,7 @@
 	request.setCharacterEncoding("UTF-8");
 	custNo = request.getParameter("custno");
 
-/* 	String url = "jdbc:oracle:thin:@localhost:1521:xe";
-	Class.forName("oracle.jdbc.driver.OracleDriver");
-	Connection conn = 
-		DriverManager.getConnection(url, "shop", "1234");
- */	
+
 	String sql = "update member_tbl_02 "+
 	" set custname = ?, phone= ?, address = ?, joindate = to_date(?,'YYYY-MM-DD'), grade = ?, city = ? where custno = " + custNo;
 

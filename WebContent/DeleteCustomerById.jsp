@@ -17,11 +17,6 @@
 		request.setCharacterEncoding("UTF-8");
 		
 
-/* 		String url = "jdbc:oracle:thin:@localhost:1521:xe";
-		Class.forName("oracle.jdbc.driver.OracleDriver");
-		Connection conn = DriverManager
-				.getConnection(url, "shop", "1234");
- */
 		String sql = "delete from member_tbl_02 "
 				//+ " where custno = " + 10112;
 				+ " where custno = " + request.getParameter("custno");

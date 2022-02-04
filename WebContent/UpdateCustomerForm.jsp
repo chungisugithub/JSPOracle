@@ -13,10 +13,7 @@
 			return;
 		}
 		
-/* 		String url = "jdbc:oracle:thin:@localhost:1521:xe";
-		Class.forName("oracle.jdbc.driver.OracleDriver");
-		Connection conn = DriverManager
-				.getConnection(url, "shop", "1234"); */
+
 
 		String sql = "select * from member_tbl_02 where custno = " + custno;
 		ResultSet rs = conn.prepareStatement(sql).executeQuery();

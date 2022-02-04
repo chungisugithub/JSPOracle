@@ -15,11 +15,7 @@
 	request.setCharacterEncoding("UTF-8");
 String action = request.getParameter("action");
 
-/* String url = "jdbc:oracle:thin:@localhost:1521:xe";
-Class.forName("oracle.jdbc.driver.OracleDriver");
-Connection conn = 
-	DriverManager.getConnection(url, "shop", "1234");
- */
+
 %>
 <%= request.getParameter("custname") %>
 

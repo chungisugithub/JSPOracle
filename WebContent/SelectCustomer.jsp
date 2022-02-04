@@ -42,10 +42,7 @@ margin: 0 auto;
 <h2>고객리스트</h2>
 
 <%
-/* String url ="jdbc:oracle:thin:@localhost:1521:xe";
-Class.forName("oracle.jdbc.driver.OracleDriver");
-Connection conn = DriverManager.getConnection(url,"shop","1234");
- */
+
  ResultSet rs = conn.prepareStatement("select CUSTNO,CUSTNAME,PHONE from member_tbl_02").executeQuery();
 %>
 <table id="customers">

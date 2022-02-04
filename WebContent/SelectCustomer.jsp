@@ -7,10 +7,35 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>고객명단</title>
+<style>
+#customers {
+margin: 0 auto;
+  font-family: Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 50%;
+}
+
+#customers td, #customers th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+#customers tr:nth-child(even){background-color: #f2f2f2;}
+
+#customers tr:hover {background-color: #ddd;}
+
+#customers th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: center;
+  background-color: #04AA6D;
+  color: white;
+}
+</style>
 </head>
 <body>
 <ul>
-	<li>신규교객등록</li>
+	<li><a href="./NewCustomerForm.jsp">신규교객등록</a></li>
 	<li>고객리스트</li>
 </ul>
 <h2>고객리스트</h2>
@@ -21,13 +46,19 @@ Class.forName("oracle.jdbc.driver.OracleDriver");
 Connection conn = DriverManager.getConnection(url,"shop","1234");
 ResultSet rs = conn.prepareStatement("select CUSTNO,CUSTNAME,PHONE from member_tbl_02").executeQuery();
 %>
-<table border='1'>
+<table id="customers">
+<tr>
+<th>1</th><th>2</th><th>3</th><th>4</th><th>4</th>
+</tr>
 <% while( rs.next()) {
 	%> 
 	<tr><td><a href="./UpdateCustomerForm.jsp?custno=<%=rs.getInt("custno")%>"><%=rs.getInt("custno")%></a></td><td>
 	<%=rs.getString("custname")%></td><td>
 	<%=rs.getString("phone")%></td>
-	<td><input type="submit" value="삭제"></td>
+	<td><a href="./DeleteCustomerById.jsp?custno=<%=rs.getInt("custno")%>&custname=<%=rs.getString("custname")%>">삭제</a></td>
+	<td>
+	<button onclick="document.location='./DeleteCustomerById.jsp?custno=<%=rs.getInt("custno")%>&custname=<%=rs.getString("custname")%>'">삭제2</button>
+	</td>
 	</tr>
 	<%}%>
 	

@@ -34,6 +34,9 @@ String sql = "insert into member_tbl_02 "+
 	
 	pstmt.executeQuery();
 %>
+<script>
+location.replace("./SelectCustomer.jsp");
+</script>
 
 </body>
 </html>

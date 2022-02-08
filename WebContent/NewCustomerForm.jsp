@@ -8,7 +8,7 @@
 </head>
 <body>
 <h2>신규고객등록</h2>
-<form action="InsertCustomer.jsp" method="post">
+<form action="InsertCustomer.jsp" method="get">
 <table>
 <tr><td>고객명</td><td><input type="text" name="custname"></td></tr>
 <tr><td>전화번호</td><td><input type="text" name="phone"></td></tr>

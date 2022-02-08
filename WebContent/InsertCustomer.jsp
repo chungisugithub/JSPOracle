@@ -14,8 +14,6 @@
 <%
 	request.setCharacterEncoding("UTF-8");
 String action = request.getParameter("action");
-
-
 %>
 <%= request.getParameter("custname") %>
 
@@ -34,7 +32,7 @@ String sql = "insert into member_tbl_02 "+
 	pstmt.executeQuery();
 %>
 <script>
-location.replace("./SelectCustomer.jsp");
+/* location.replace("./SelectCustomer.jsp"); */
 </script>
 
 </body>
